@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row center">
+    <h1 class="">{{timer.timeInMilliSecondsPrFrame | formatTimer}}</h1>
+  </div>
+  <div class="row center">
+    <label *ngIf="!timer.isRunning; else stopButton" class="btn-primary" ngbButtonLabel (click)="startTimer()">Start</label>
+    <span class="spacer"></span>
+    <label class="btn-warning" ngbButtonLabel (click)="markLap()">Lap</label>
+    <span class="spacer"></span>
+    <label class="btn-danger" ngbButtonLabel (click)="resetTimer()">Reset</label>
+    <span class="spacer"></span>
+    <label class="btn-danger" ngbButtonLabel (click)="removeTimer()">Remove</label>
+  </div>
+  <ng-container *ngIf="timer.labs.length > 0">
+    <div class="row center">
+      <app-labs [labs]="timer.labs"></app-labs>
+    </div>
+  </ng-container>
+</div>
+
+
+<ng-template #stopButton>
+  <label class="btn-primary" ngbButtonLabel (click)="stopTimer()">Stop</label>
+</ng-template>
+
+
+
+

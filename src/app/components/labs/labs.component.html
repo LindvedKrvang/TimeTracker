@@ -1,0 +1,3 @@
+<h6 *ngFor="let lab of labs; let i = index">
+  Lab {{i + 1}}: {{getLabInMilliSecondsPrFrame(i) | formatTimer}}
+</h6>

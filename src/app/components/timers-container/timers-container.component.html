@@ -1,0 +1,5 @@
+<app-timer *ngFor="let timer of timers; let i = index" [timer]="timer" (removeEmitter)="removeTimer(i)"></app-timer>
+<hr>
+<div >
+  <label class="btn-success" ngbButtonLabel (click)="addTimer()">Add timer</label>
+</div>
